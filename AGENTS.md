@@ -1,10 +1,11 @@
 # Portfolio Project
 
-Angular 19 standalone project with dark theme, Clean Architecture, and Facade pattern.
+Angular 20 standalone project with dark theme, Clean Architecture, and Facade pattern.
 
 ## Commands
-- `npm start` - Dev server at http://localhost:4200
-- `npm run build` - Production build to `dist/portfolio`
+- `npx ng serve` - Dev server at http://localhost:4200
+- `npx ng build` - Production build to `dist/portfolio`
+- `npx ng update` - Update Angular and dependencies
 
 ## Architecture
 - `core/services/` - Singleton services (GithubService)
@@ -27,4 +28,15 @@ Angular 19 standalone project with dark theme, Clean Architecture, and Facade pa
 ## Theme
 - Dark theme via Angular Material with cyan/orange accent
 - CSS custom properties in `styles.scss` for colors
-- Bootstrap 5 available for grid utilities only
+- CSS Grid/Flexbox native (no framework)
+
+## Skills
+Installed via `npx autoskills` in `.agents/skills/`:
+- Angular: angular-developer, reference-core, reference-signal-forms, reference-compiler-cli, adev-writing-guide, pr_review
+- TypeScript: typescript-advanced-types
+- Node.js: nodejs-backend-patterns, nodejs-best-practices
+- Frontend: frontend-design, accessibility, seo
+
+Install more skills: `npx autoskills -y`
+
+Use the `/skill` command in opencode to load skills.
