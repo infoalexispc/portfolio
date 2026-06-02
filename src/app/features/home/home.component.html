@@ -44,6 +44,15 @@
     }
   </section>
 
+  <section class="featured-section">
+    <h2 class="section-subtitle">Proyectos Destacados</h2>
+    <div class="featured-grid">
+      @for (project of featuredProjects; track project.id) {
+        <app-featured-project-card [project]="project" />
+      }
+    </div>
+  </section>
+
   <section class="features-section">
     <h2 class="section-subtitle">Explora</h2>
     <div class="features-grid">

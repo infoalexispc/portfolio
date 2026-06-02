@@ -1,7 +1,8 @@
-import { inject, signal, computed } from '@angular/core';
+import { Injectable, inject, signal, computed } from '@angular/core';
 import { GithubRepo } from '../../../core/models/github.model';
 import { GithubService } from '../../../core/services/github.service';
 
+@Injectable({ providedIn: 'root' })
 export class ProjectsFacade {
   private readonly githubService = inject(GithubService);
 
@@ -54,5 +55,3 @@ export class ProjectsFacade {
     this._selectedLanguage.set(null);
   }
 }
-
-export const projectsFacade = new ProjectsFacade();

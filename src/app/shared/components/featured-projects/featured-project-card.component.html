@@ -1,0 +1,21 @@
+<mat-card class="project-card">
+  <div class="image-container">
+    <img [src]="project().imageUrl" [alt]="project().title" />
+    <div class="overlay">
+      <a mat-raised-button color="primary" [href]="project().url" target="_blank" rel="noopener">
+        <mat-icon>open_in_new</mat-icon>
+        Visitar Proyecto
+      </a>
+    </div>
+  </div>
+
+  <mat-card-content>
+    <mat-card-title>{{ project().title }}</mat-card-title>
+    <p class="description">{{ project().description }}</p>
+    <div class="tags">
+      @for (tag of project().tags; track tag) {
+        <mat-chip>{{ tag }}</mat-chip>
+      }
+    </div>
+  </mat-card-content>
+</mat-card>

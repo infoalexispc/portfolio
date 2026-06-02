@@ -154,3 +154,19 @@ h1 {
     font-size: 0.875rem;
   }
 }
+
+.featured-section {
+  padding: 3rem 1rem;
+  background: var(--bg-secondary);
+}
+
+.featured-grid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
