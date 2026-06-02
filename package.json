@@ -1,12 +1,15 @@
 {
   "name": "portfolio",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "private": true,
   "dependencies": {
@@ -25,16 +28,17 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
+    "@analogjs/vite-plugin-angular": "2.5.3",
+    "@analogjs/vitest-angular": "2.5.3",
     "@angular-devkit/build-angular": "^20.3.27",
+    "@angular/build": "^20.3.27",
     "@angular/cli": "^20.3.27",
     "@angular/compiler-cli": "^20.3.24",
-    "@types/jasmine": "~5.1.0",
-    "jasmine-core": "~5.6.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.9.3"
+    "@vitest/coverage-v8": "^2.1.8",
+    "jsdom": "^25.0.0",
+    "@oxc-parser/binding-darwin-arm64": "^0.121.0",
+    "typescript": "~5.9.3",
+    "vite": "^6.0.0",
+    "vitest": "^2.1.8"
   }
 }

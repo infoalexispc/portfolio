@@ -115,7 +115,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "codeCoverage": true,
+            "codeCoverageExclude": ["src/main.ts", "src/**/*.module.ts"]
           }
         }
       }
