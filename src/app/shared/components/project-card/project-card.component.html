@@ -1,0 +1,42 @@
+<mat-card class="project-card">
+  <mat-card-header>
+    <mat-card-title>{{ repo().name }}</mat-card-title>
+    <mat-card-subtitle>{{ repo().full_name }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p class="description">{{ repo().description || 'No description available' }}</p>
+
+    <div class="stats">
+      <span class="stat">
+        <mat-icon>star</mat-icon>
+        {{ repo().stargazers_count }}
+      </span>
+      <span class="stat">
+        <mat-icon>fork_right</mat-icon>
+        {{ repo().forks_count }}
+      </span>
+      @if (repo().language) {
+        <span class="stat language">
+          <mat-icon>code</mat-icon>
+          {{ repo().language }}
+        </span>
+      }
+    </div>
+
+    @if (repo().topics.length > 0) {
+      <div class="topics">
+        @for (topic of repo().topics.slice(0, 5); track topic) {
+          <mat-chip>{{ topic }}</mat-chip>
+        }
+      </div>
+    }
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <a mat-button color="primary" [href]="repo().html_url" target="_blank" rel="noopener">
+      <mat-icon>open_in_new</mat-icon>
+      View Repository
+    </a>
+  </mat-card-actions>
+</mat-card>

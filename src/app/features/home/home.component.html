@@ -1,0 +1,67 @@
+<div class="home-page">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>¡Hola! Soy <span class="highlight">Alexis Rodriguez</span></h1>
+      <p class="subtitle">Desarrollador Full Stack | Entusiasta de Angular</p>
+      <p class="description">
+        Construyo aplicaciones web modernas con tecnologías de punta.
+        Explora mis proyectos y conoce más sobre mis habilidades.
+      </p>
+      <div class="cta-buttons">
+        <a mat-raised-button color="primary" routerLink="/projects">
+          <mat-icon>folder</mat-icon>
+          Ver Proyectos
+        </a>
+        <a mat-stroked-button color="primary" routerLink="/about">
+          <mat-icon>person</mat-icon>
+          Sobre Mí
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    @if (loading()) {
+      <p class="loading-text">Cargando estadísticas...</p>
+    } @else if (user()) {
+      <div class="stats-grid">
+        <mat-card class="stat-card">
+          <mat-icon>folder</mat-icon>
+          <span class="stat-value">{{ user()?.public_repos }}</span>
+          <span class="stat-label">Repositorios</span>
+        </mat-card>
+        <mat-card class="stat-card">
+          <mat-icon>people</mat-icon>
+          <span class="stat-value">{{ user()?.followers }}</span>
+          <span class="stat-label">Seguidores</span>
+        </mat-card>
+        <mat-card class="stat-card">
+          <mat-icon>person_add</mat-icon>
+          <span class="stat-value">{{ user()?.following }}</span>
+          <span class="stat-label">Siguiendo</span>
+        </mat-card>
+      </div>
+    }
+  </section>
+
+  <section class="features-section">
+    <h2 class="section-subtitle">Explora</h2>
+    <div class="features-grid">
+      <mat-card class="feature-card" routerLink="/projects">
+        <mat-icon>folder_open</mat-icon>
+        <h3>Proyectos</h3>
+        <p>Explora mis repositorios en GitHub y descubre mis últimos trabajos.</p>
+      </mat-card>
+      <mat-card class="feature-card" routerLink="/skills">
+        <mat-icon>build</mat-icon>
+        <h3>Skills</h3>
+        <p>Conoce las tecnologías y herramientas que domino.</p>
+      </mat-card>
+      <mat-card class="feature-card" routerLink="/contact">
+        <mat-icon>email</mat-icon>
+        <h3>Contacto</h3>
+        <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+      </mat-card>
+    </div>
+  </section>
+</div>

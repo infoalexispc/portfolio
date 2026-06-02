@@ -1,0 +1,52 @@
+<div class="about-page">
+  <h1 class="section-title">Sobre Mí</h1>
+
+  @if (loading()) {
+    <div class="loading">
+      <p>Cargando información...</p>
+    </div>
+  } @else {
+    <div class="about-content">
+      <mat-card class="profile-card">
+        <div class="profile-header">
+          <img [src]="user()?.avatar_url" alt="Avatar" class="avatar" />
+          <div class="profile-info">
+            <h2>{{ user()?.name || user()?.login }}</h2>
+            <p class="bio">{{ user()?.bio || 'Desarrollador Full Stack' }}</p>
+            <div class="stats">
+              <span><mat-icon>people</mat-icon> {{ user()?.followers }} seguidores</span>
+              <span><mat-icon>person_add</mat-icon> {{ user()?.following }} siguiendo</span>
+              <span><mat-icon>folder</mat-icon> {{ user()?.public_repos }} repositorios</span>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+
+      <mat-card class="info-card">
+        <mat-card-content>
+          <h3>¿Quién soy?</h3>
+          <p>
+            Soy un desarrollador apasionado con experiencia en la creación de
+            aplicaciones web modernas. Me especializo en Angular, TypeScript y
+            tecnologías related.
+          </p>
+          <p>
+            Mi objetivo es crear soluciones elegantes y eficientes que resuelvan
+            problemas reales y proporcionen una excelente experiencia de usuario.
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <div class="cta-section">
+        <a mat-raised-button color="primary" [href]="user()?.html_url" target="_blank">
+          <mat-icon>open_in_new</mat-icon>
+          Ver Perfil de GitHub
+        </a>
+        <a mat-stroked-button routerLink="/contact">
+          <mat-icon>email</mat-icon>
+          Contactar
+        </a>
+      </div>
+    </div>
+  }
+</div>

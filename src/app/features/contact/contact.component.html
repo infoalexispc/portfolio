@@ -1,0 +1,71 @@
+<div class="contact-page">
+  <h1 class="section-title">Contacto</h1>
+
+  <mat-card class="contact-card">
+    <mat-card-content>
+      <p class="intro">
+        ¿Tienes un proyecto en mente? ¿Quieres colaborar? ¡No dudes en contactarme!
+      </p>
+
+      <form (ngSubmit)="onSubmit()" class="contact-form">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput [(ngModel)]="formData.name" name="name" required />
+          <mat-icon matPrefix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" [(ngModel)]="formData.email" name="email" required />
+          <mat-icon matPrefix>email</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Mensaje</mat-label>
+          <textarea matInput
+                    [(ngModel)]="formData.message"
+                    name="message"
+                    rows="5"
+                    required></textarea>
+          <mat-icon matPrefix>message</mat-icon>
+        </mat-form-field>
+
+        <button mat-raised-button
+                color="primary"
+                type="submit"
+                [disabled]="sending()">
+          @if (sending()) {
+            Enviando...
+          } @else {
+            <ng-container>
+              <mat-icon>send</mat-icon>
+              Enviar Mensaje
+            </ng-container>
+          }
+        </button>
+      </form>
+
+      @if (success()) {
+        <p class="success-message">¡Mensaje enviado con éxito! Te responderé pronto.</p>
+      }
+    </mat-card-content>
+  </mat-card>
+
+  <div class="contact-info">
+    <mat-card>
+      <mat-card-content>
+        <h3>Outras formas de contato</h3>
+        <div class="info-items">
+          <a href="mailto:infoalexispc@gmail.com" class="info-item">
+            <mat-icon>email</mat-icon>
+            <span>infoalexispc&#64;gmail.com</span>
+          </a>
+          <a href="https://github.com/infoalexispc" target="_blank" class="info-item">
+            <mat-icon>code</mat-icon>
+            <span>github.com/infoalexispc</span>
+          </a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+.project-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 188, 212, 0.15);
+  }
+}
+
+mat-card-header {
+  margin-bottom: 1rem;
+}
+
+mat-card-title {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+}
+
+mat-card-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.language {
+  background: rgba(0, 188, 212, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: var(--accent-color);
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+mat-chip {
+  font-size: 0.75rem;
+}
+
+mat-card-actions {
+  padding: 1rem !important;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+}

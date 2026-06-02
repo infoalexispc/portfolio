@@ -1,0 +1,40 @@
+<div class="projects-page">
+  <h1 class="section-title">Mis Proyectos</h1>
+
+  @if (facade.loading()) {
+    <div class="loading">
+      <mat-spinner diameter="50"></mat-spinner>
+      <p>Cargando proyectos...</p>
+    </div>
+  } @else if (facade.error()) {
+    <div class="error">
+      <p>{{ facade.error() }}</p>
+      <button mat-raised-button color="primary" (click)="loadProjects()">
+        Reintentar
+      </button>
+    </div>
+  } @else {
+    <div class="filters">
+      <button mat-stroked-button
+              [class.active]="!facade.selectedLanguage()"
+              (click)="facade.clearFilter()">
+        Todos ({{ facade.projectCount() }})
+      </button>
+      @for (lang of facade.languages(); track lang) {
+        <button mat-stroked-button
+                [class.active]="facade.selectedLanguage() === lang"
+                (click)="facade.selectLanguage(lang)">
+          {{ lang }}
+        </button>
+      }
+    </div>
+
+    <div class="projects-grid">
+      @for (repo of facade.filteredProjects(); track repo.id) {
+        <app-project-card [repo]="repo" />
+      } @empty {
+        <p class="no-results">No se encontraron proyectos.</p>
+      }
+    </div>
+  }
+</div>
